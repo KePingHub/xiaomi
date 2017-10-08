@@ -1,0 +1,2906 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>小米商城 - 红米Note 4X、小米5c、小米MIX、小米笔记本官方网站</title>
+    <link rel="stylesheet" href="css/reset.css"/>
+    <style>
+        body{ background-color: #FFF; }
+        .clearfix:before,.clearfix:after{ content: ""; display: table; clear:both;}
+        /*顶部条开始*/
+        .top-bar{ background-color:#333; }
+        .top-bar-wrap,.header-wrap,.container-wrap,.main-content-wrap,.footer-wrap,.bottom-bar-wrap{ width:1226px; margin:0 auto; }
+        .top-bar-wrap a:hover:not(.shop-car){ color:#fff; transition: .1s;}
+        .top-nav{ float:left;}
+        .top-nav a,.login-info a,.shopping-car a,.shopping-car a span{ font-size: 12px; color:#b0b0b0; line-height:40px; text-decoration: none; }
+        .top-nav span,.login-info span,.shopping-info span:not(.num){ color:#424242; font-size: 12px;  line-height: 40px;}
+        .login-info,.shopping-info{ float:right;}
+        .shopping-info{  width: 120px; margin-left: 15px; position: relative;}
+        .shopping-car{ height:40px; background: #424242 url("img/shopping-car.png") no-repeat 14px center; text-indent: 40px; }
+        .shopping-car a{ display: block; height:40px; line-height: 40px; position:relative; z-index:10;}
+        .shopping-car .down-list{ width:312px; height:0; overflow: hidden; background-color:#FFF; position: absolute; right:0;top:40px ; border-bottom: 0 solid #E0E0E0; box-shadow: 0 2px 10px rgba(0,0,0,0.15); z-index: 4; transition:.2s;}
+        .shopping-car .down-list p{ line-height: 98px; font-size: 12px; color:#424242;}
+        .shopping-info:hover .shopping-car a, .shopping-info:hover .shopping-car a span{ color:#ff6700; }
+        .shopping-info:hover .shopping-car{ background-image: url("img/red-car.png"); background-color: #fff;}
+        .shopping-info:hover .down-list{ height: 98px; border-bottom-width: 1px;}
+        /*顶部条结束*/
+
+        /*header开始*/
+        .header{ position: relative;}
+        .header-wrap{ height:100px;}
+        .logo{ margin-top: 22px; float: left;}
+        .logo a::before{ content: ""; width: 55px; height:55px; background: #FF6700 url("img/mi-logo.png") no-repeat center; position:absolute; }
+        .logo-img a::before{ content: ""; width: 165px; height:100px; background: url("img/mfjyx.gif") no-repeat center; position:absolute; margin-left: 69px; }
+
+        /*主导航条开始*/
+        .main-nav{ float:left; margin-left: 100px;}
+        .main-nav .nav .nav-item{ float:left;}
+        .nav .nav-item .nav-a{ display: block; line-height: 100px; color:#333; font-size: 16px; padding: 0 10px; text-decoration: none; }
+        .nav .nav-item .nav-a:hover{ color:#ff6700;}
+        .nav .nav-item:hover .li-child{ display: block;}
+
+        /*主导航子菜单开始*/
+        .nav .nav-item .li-child{ width:100%; height:230px; display:none; position:absolute; top:100px; left:0; background-color: #FFF; text-align: center; border-top: 1px solid #E0E0E0; box-shadow:0 3px 4px rgba(0,0,0,0.18);  z-index: 40; transition:.2s;}
+        .child-list{ width: 1226px; margin:0 auto; position: relative;}
+        .child-list li:not(.no-border)::before{content: "";width:0; height:100px;border-left: 1px solid #E0E0E0; position: absolute; left:0; top:35px;}
+        .child-list li{ padding:35px 22px 0; float:left; text-align: center;  position: relative;}
+        .child-list li .phone-img{ width: 160px; height:115px;}
+        .phone-img img{ width:100%; height:100%;}
+        .child-list li a{ display: inline-block; margin-top: 20px; text-decoration: none; color:#333; }
+        .child-list li a,.child-list li p,.child-list li p a{ font-size: 12px; line-height: 17px;}
+        .child-list li p{ color:#FF6700;}
+        .child-list li p a{ margin-top: 0;}
+
+        /*站内搜索开始*/
+        .site-search{ float:right; margin-top: 25px; position: relative;}
+        .search-text{ text-indent: 10px;}
+        .search-text,.search-btn{ width:243px; height:48px; border:1px solid #EEE; float:left;}
+        .hot-words{  position: absolute; top:14px; right:60px; }
+        .hot-words a{ display: inline-block; font-size: 13px; color:#937575; background-color: #EEE; padding:0 5px; text-decoration: none;}
+        .hot-words a:hover{  background: #FF6700; color:#FFF;}
+        .search-btn{ width:49px; border-left: none; background: #FFF url("img/search-btn.png") no-repeat center; cursor:pointer;}
+        .search-btn:hover{  background: #FF6700  url("img/search-btn2.png") no-repeat center;}
+        .site-search:hover .nav-form input{ border-color: #b0b0b0;}
+        /*站内搜索结束*/
+
+
+        /*广告区左侧导航开始*/
+        .main-nav .nav .first-item{ width: 127px; height:100px; padding: 0 30px 0 0; position:relative;}
+        .first-item .item-child{ width:234px; height:460px; font-size: 14px; background-color: rgba(0,0,0,0.5); position:absolute; top:100px; left:-100px; z-index: 30;}
+        .item-child .child-nav{ margin:20px 0 0;}
+        .child-nav .child-nav-item{ width:234px; height:42px;}
+        .child-nav-item:hover .right-list{ display: block;}
+        .child-nav .child-nav-item .link{ display:block; padding-left: 30px; line-height: 42px; color:#FFF; text-decoration: none; position:relative;}
+        .child-nav-item .link::after{ content: ">"; font-size: 18px; font-weight: bold; position: absolute; top:-2px; right:20px;}
+        .child-nav-item .link:hover{ background-color: #FF6700; }
+        /*广告区左侧导航-子菜单开始*/
+        .child-nav-item .right-list{ height:100%; background-color: #FFF; position:absolute; top:0; left:234px; display: none; border: 1px solid #E0E0E0; box-shadow: 3px 10px 15px #E0E0E0;}
+        .right-list-3 ,.right-list-4{ width:996px;}
+        .right-list-1 ,.right-list-6{ width:748px;}
+        .right-list-5{ width:496px;}
+        .right-list-2 ,.right-list-7 ,.right-list-8 ,.right-list-9 ,.right-list-10{ width:248px;}
+        .right-list ul,.phone-info span,.phone-info img{ float:left;}
+        .right-list ul li{ width:248px; height:74px; position:relative;}
+        .right-list ul li .phone-info{ display:block; line-height: 40px; width:170px; color:#333; padding: 17px 0 17px 20px; text-decoration: none;}
+        .phone-info img{ width:40px; height:40px; margin-right:15px;}
+        .buy-btn{ width:60px; height:25px; color:#FF6700; position:absolute; top:23px; right:10px; text-decoration: none; text-align: center; line-height: 25px; border:1px solid #FF6700;}
+        .phone-info:hover span{ color:#FF6700;}
+        .buy-btn:hover{ color:#FFF; background-color: #FF6700;}
+        /*header结束*/
+
+
+        /*banner开始*/
+        .banner{ position: relative; }
+        .banner .banner-img:hover::before ,.banner .banner-img:hover::after{ content: "<"; width:42px; height:70px; font: 40px/70px "MicrosoftYahei"; text-align: center; color:#FFF; background-color:rgba(0,0,0,0.3); position: absolute; top:50%; right:950px; margin-top: -35px; z-index: 10;}
+        .banner .banner-img:hover::after{ content: ">"; right: 0; }
+        .banner .banner-img img{ display: block; height:460px; width:1226px;}
+        .pager-list{ position:absolute; bottom:27px; right:50px; z-index: 20;}
+        .pager-list li{ float:left; margin-left: 10px;}
+        .pager-list li a{ display: block; width:7px; height:7px; background: rgba(0,0,0,0.4); border:3px solid rgba(211,211,211,0.6); border-radius: 50%;}
+        .pager-list li a:hover{ background-color: rgba(255,255,255,0.4); border-color: rgba(0,0,0,0.4);}
+
+        /*banner底部小广告栏开始*/
+        .banner-bottom{ padding: 15px 0 25px;}
+        .banner-bottom .bottom-right-list li,.banner-bottom-left, .bottom-right-list, .left-list .children-item{ float:left; }
+        .banner-bottom .bottom-right-list li:not(.no-mr),.banner-bottom-left{ margin-right: 15px;}
+        /*banner底部左边开始*/
+        .banner-bottom-left{ width:213px;height:150px; background-color: #5F5750; padding:10px;}
+        .banner-bottom-left .children-item{ position:relative;}
+        .banner-bottom-left .children-item:not(.no-bl)::before, .banner-bottom-left .top::after{ content:""; width:1px; height: 70px; background-color:#665e57; position:absolute; bottom:0;}
+        .banner-bottom-left .top:not(.no-bl)::before{ top:0;}
+        .banner-bottom-left .top::after{ width:60px; height:1px;  left:5px;}
+        .left-list .children-item a{ display: block; width:70px; height:62px; font-size: 12px; text-decoration: none; color:#CDCAC8; text-align: center; padding-top: 13px; }
+        .children-item a .children-item-icon{ display:block; width:27px; height:27px; margin:0 auto 4px; background: url("img/banner-bottom-left.png") no-repeat;}
+        .left-list .children-item:hover a{ color:#FFF;}
+        .left-list .children-item:nth-child(1) a:hover .children-item-icon{ background-position: -27px 0;}
+        .left-list .children-item:nth-child(2) a .children-item-icon{ background-position: 0 -27px;}
+        .left-list .children-item:nth-child(2) a:hover .children-item-icon{ background-position: -27px -27px;}
+        .left-list .children-item:nth-child(3) a .children-item-icon{ background-position: 0 -54px;}
+        .left-list .children-item:nth-child(3) a:hover .children-item-icon{ background-position: -27px -54px;}
+        .left-list .children-item:nth-child(4) a .children-item-icon{ background-position: 0 -81px;}
+        .left-list .children-item:nth-child(4) a:hover .children-item-icon{ background-position: -27px -81px;}
+        .left-list .children-item:nth-child(5) a .children-item-icon{ background-position: 0 -108px;}
+        .left-list .children-item:nth-child(5) a:hover .children-item-icon{ background-position: -27px -108px;}
+        .left-list .children-item:nth-child(6) a .children-item-icon{ background-position: 0 -135px;}
+        .left-list .children-item:nth-child(6) a:hover .children-item-icon{ background-position: -27px -135px;}
+        /*banner底部右侧小广告*/
+        .banner-bottom .bottom-right-list li a img{ display: block; width: 316px; height:170px;}
+
+
+        /*明星产品*/
+        .single-star{ padding-bottom: 20px; position: relative;}
+        .title{ line-height: 58px; font-size: 22px; font-weight: 200; color:#333;}
+        .page-turn,.see-all{ position:absolute; top:25px; right:0;}
+        .page-turn .turn-btn{ width:34px; height:22px; line-height: 22px; font-size: 20px; color:#E0E0E2; font-weight:bold; border:1px solid #E0E0E2;  }
+        .page-turn .turn-btn ,.see-all a{ text-align: center; text-decoration:none; display: inline-block;  float:left;}
+        .page-turn .no-br{ border-right: none;}
+        .turn-btn:hover{ color:#FF6700;}
+        .star-list li{ height:300px; text-align: center; padding-top: 40px; float: left; background-color: #FAFAFA;}
+        .star-list li, .substance .star-list .substance-item{ border-top-width: 1px; border-top-style:  solid;}
+        .star-list li:nth-child(1), .substance .star-list .substance-item:nth-child(1){ border-color: #FF6700;}
+        .star-list li:nth-child(2), .substance .star-list .substance-item:nth-child(2){ border-color: #83C44E;}
+        .star-list li:nth-child(3), .substance .star-list .substance-item:nth-child(3){ border-color: #2196F3;}
+        .star-list li:nth-child(4), .substance .star-list .substance-item:nth-child(4){ border-color: #E53935;}
+        .star-list li:nth-child(5), .substance .star-list .substance-item:nth-child(5){ border-color: #00C0A5;}
+        .star-list li:not(.no-mr){ margin-right: 14px;}
+        .star-list li .product-img{ display: block;width: 160px; height: 160px; margin: 0 37px 22px;}
+        .product-img img{width:100%; height:100%;}
+        .product-name{ font-size: 14px; color:#212121; text-decoration: none;}
+        .brief,.discussant{ font-size: 12px; line-height: 18px; color:#b0b0b0; margin-bottom: 10px;}
+        .price{ font-size: 13px; color:#FF6700; padding: 2px 0 10px 0;}
+        .price .del{ color:#E0E0E2; text-decoration: line-through;}
+
+
+        /*主要内容开始*/
+        /*智能硬件开始*/
+        .main-content{ background-color:#F5F5F5; padding: 55px 0 30px;}
+        .intelligent-hardware{  position: relative;}
+        .see-all a:first-child{ color:#333; margin-right: 10px; transition: .1s;}
+        .see-all a:last-child{ width:20px; font-size: 18px; text-indent: 3px; line-height: 20px; color:#FFF; background-color: #B0B0B0; border-radius:50%; transition:.2s;}
+        .see-all a:first-child:hover+a:last-child{ background-color:#FF6700;}
+        .see-all:hover a:first-child{ color:#FF6700;}
+        .hardware-content{ padding-bottom: 8px; }
+        .hardware-content .left-img{ display: block; width:234px; height:614px; margin-right: 14px; transition:.3s;}
+        .hardware-content .left-img, .hardware-content .star-list{ float:left;}
+        .hardware-content .star-list{ width:978px;}
+        .hardware-content .star-list li{ padding: 20px 0; height:auto; border-top: none; margin-bottom: 14px; position: relative; transition: .3s; overflow: hidden; background-color: #FFF;}
+        .discount,.new{ width: 66px; background-color: #E53935; position: absolute; top:0; left:50%; margin-left: -33px;}
+        .sale,.discuss{ display: block; font-size:12px; line-height: 20px; color:#FFF;}
+        .new{ background-color:#83C44E; }
+        .transform:hover{ transform: translateY(-3px); box-shadow:0 15px 25px rgba(0,0,0,0.1);}
+
+        /*搭配 配件 周边 开始*/
+        .match-hardware{position:relative;}
+        .match-hardware .section-nav{ top:10px;}
+        .section-nav-bar .nav-bar-item{ float:left; font-size: 17px; line-height: 30px; cursor:pointer;}
+        .nav-bar-item:not(.no-mr){ margin-right:25px;}
+        .nav-bar-item:hover{ color: #ff6700; border-bottom: 2px solid #ff6700;}
+        .hardware-content .short-img{ height:300px; }
+        .hidden-block{ width:234px; height:78px; background-color: #FF6700; position:absolute; bottom:-78px; left:0;  transition: .3s;}
+        .discuss{ margin-top: 10px;}
+        .star-list li:hover>.hidden-block{ bottom:0;}
+        .hardware-content .star-list .bisect{ height:93px; width:204px; text-align: left; padding: 50px 0 0 30px;}
+        .star-list .bisect .product-img{ width:80px; height:80px; margin:-40px 0 0 ;}
+        .star-list .bisect .more-turn{ width:50px; height:50px; margin:-25px 0 0; right:35px;}
+        .star-list .bisect .product-img ,.bisect .more-turn{  position: absolute; top:50%; right:20px;}
+        .star-list .bisect .see-more{ font-size: 18px; color:#333; text-decoration: none;}
+        .star-list .bisect small{display: block; font-size: 12px;}
+
+        /*为您推荐开始*/
+        .recommend{ position: relative;}
+        .recommend .hardware-content .star-list ,.popular-products .hardware-content .star-list{ width:1226px;}
+        .recommend .price{ margin-top: 10px; margin-bottom: 10px;}
+
+
+        /*热评产品开始*/
+        .popular-products .hardware-content .star-list .product-img{ width:296px; height:220px; padding: 0; margin:0 0 28px;}
+        .popular-products .hardware-content .star-list li{ padding:0; width:296px; height:415px;}
+        .popular-products .hardware-content .discuss{ height:72px; margin:0 28px 20px;}
+        .price .line{ color:#E0E0E2;}
+
+        /*内容开始*/
+        .substance .substance-title{ font-size: 15px; font-weight: normal; color:#FF6700; margin-top: 45px;}
+        .substance .substance-item{ position:relative; width:296px;}
+        .substance .star-list .substance-item .substance-img{ width:216px; height:154px; margin:0 auto;}
+        .substance .little-title .name{ font-size: 20px; font-weight: normal; color:#333;text-decoration: none;}
+        .substance .brief{ line-height: 22px; margin: 5px 40px 13px;}
+        .substance .price{ color:#333; margin-bottom: 10px;}
+        .substance-item .turn-btn2{ display: none; width:20px; height:50px; font: bold 18px/50px "MicrosoftYahei"; color:#FFF; background-color: rgba(66,66,66,0.2); position:absolute; top:50%; margin-top: -25px; z-index:30; cursor:pointer; transition:.2s;}
+        .substance-item .btn2-left{ left:0; }
+        .substance-item .btn2-right{ right:0;}
+        .substance-item:hover>.turn-btn2{ display: block;}
+        .btn2-left:hover,.btn2-right:hover{background-color: #b0b0b0;}
+        .substance-pager{ display:inline-block; margin-top: 23px}
+        .substance-pager .s-pager{ display: inline-block; width:4px; height:4px; background-color: #B0B0B0; border:2px solid transparent; margin-right: 18px; border-radius: 50%; cursor:pointer;}
+        .substance-pager .s-pager:last-child{ margin-right: 0;}
+        .substance-pager .s-pager:hover{ border-color:#ff6700; background-color: #FFF;}
+
+        /*视频开始*/
+        .video{ position:relative;}
+        .video .hardware-content .star-list li .product-img{ height:180px; position: relative;}
+        .video-img .player{ width:32px; height:20px; background-color: #473E37; border:3px solid #FFF; border-radius: 14px; position:absolute; bottom:12px; left:20px;}
+        .video-img .player .play-btn{ width:0; height:0; border-left: 10px solid #FFF; border-top: 6px solid transparent; border-bottom: 6px solid transparent; position:absolute; top:50%; left:50%; margin:-6px 0 0 -4px;}
+        .video-img:hover .player{ background-color: #ff6700; border-color: #ff6700;}
+        .video .hardware-content .star-list .transform{ height:285px;}
+        .video .hardware-content .star-list .transform .video{ height:25px; margin:0;}
+        .video .hardware-content .star-list .transform .video .video-info{ transition:.1s;}
+        .video .hardware-content .star-list .transform .video .video-info:hover{ color:#ff6700;}
+        /*主要内容结束*/
+
+        /*footer开始*/
+        .footer{ background-color: #FFF;}
+        .footer-wrap{height: 272px;}
+        .footer-service{ padding:25px 0; border-bottom: 1px solid #E0E0E0;}
+        .service-list .service-item{ float:left; padding: 0 55px 0;}
+        .service-list .service-item:not(.no-br){  border-right: 1px solid #E0E0E0;}
+        .service-item a{ font:16px/25px 微软雅黑; color:#796179; text-decoration: none; transition:.1s;}
+       /*footer雪碧图定位开始*/
+        .service-item a span{ display: inline-block; width:25px; height:25px; background: url("img/footer-icon.png") no-repeat; vertical-align: middle;}
+        .service-list .service-item:nth-child(1) a:hover .footer-icon-1{ background-position: -25px 0; }
+        .service-item .footer-icon-2{ background-position: 0 -25px; }
+        .service-list .service-item:nth-child(2) a:hover .footer-icon-2{ background-position: -25px -25px; }
+        .service-item .footer-icon-3{ background-position: 0 -50px; }
+        .service-list .service-item:nth-child(3) a:hover .footer-icon-3{ background-position: -25px -50px; }
+        .service-item .footer-icon-4{ background-position: 0 -75px; }
+        .service-list .service-item:nth-child(4) a:hover .footer-icon-4{ background-position: -25px -75px; }
+        .service-item .footer-icon-5{ background-position: 0 -100px; }
+        .service-list .service-item:nth-child(5) a:hover .footer-icon-5{ background-position: -25px -100px; }
+        .service-item a:hover{ color:#ff6700;}
+
+        .footer-links{ padding: 38px 0 25px;}
+        .col-links,.col-contact{ float:left;}
+        .col-links{ width:160px; margin-left: -1px;}
+        .col-links dt{ font-size: 14px; color:#424242; margin-bottom: 22px;}
+        .col-links dd{ margin-bottom: 8px;}
+        .col-links dd a{ font-size: 12px; color:#757575; text-decoration: none;}
+        .col-links dd a:hover{ color:#ff6700;}
+
+        .col-contact{ padding: 0 50px; border-left: 1px solid #E0E0E0; text-align:center;}
+        .phone-num{ font-size:20px; color:#ff6700; margin-bottom: 6px;}
+        .work-time,.remark{ font-size:13px; line-height:20px; color:#757575; }
+        .online-service{ margin-top: 17px; border: 1px solid #ff6700; }
+        .online-service a{ display: block; height:28px; font-size: 12px; line-height:28px; color:#ff6700; text-decoration: none; transition:.1s;}
+        .msg-icon{ display: inline-block; width:14px; height:14px; background: url("img/footer-icon.png") no-repeat; vertical-align: middle;}
+        .msg-icon{ background-position: 0 -125px;}
+        .online-service a:hover{ background-color: #ff6700; color:#FFF;}
+        .online-service:hover a .msg-icon{ background-position: -14px -125px;}
+
+        /*bottom-bar开始*/
+        .bottom-bar{ background-color: #FAFAFA;}
+        .bottom-bar a{ text-decoration: none;}
+        .bottom-bar-wrap{ height:140px; padding-top: 30px;}
+        .bottom-logo,.bottom-main-info{ float:left;}
+        .bottom-main-content .bottom-logo{ width:57px; height:57px; margin-right: 15px;}
+        .bottom-logo img{ width:100%; height:100%;}
+
+        .bottom-main-info .link a,.link span,.register-info a,.register-info{ font-size: 12px; line-height: 18px; color:#757575; transition:.1s;}
+        .register .register-info a, .register-info, .bottom-main-info .link span{ color: #B0B0B0;}
+        .bottom-main-info .link a:hover,.register-info a:hover{ color:#ff6700;}
+
+        .link-img{ float:right;}
+        .link-img img{ display: block; width:85px; height:28px; float:left; margin-left: 5px;}
+        /*底部标语*/
+        .slogan{ margin-top: 30px;}
+        .slogan img{ display:block; width:267px; height:19px; margin: 0 auto;}
+    </style>
+</head>
+<body>
+    <div class="top-bar">
+        <div class="top-bar-wrap clearfix">
+            <div class="top-nav">
+                <a href="javascript: void(0);">小米商城</a>
+                <span>丨</span>
+                <a href="javascript: void(0);">MIUI</a>
+                <span>丨</span>
+                <a href="javascript: void(0);">米聊</a>
+                <span>丨</span>
+                <a href="javascript: void(0);">游戏</a>
+                <span>丨</span>
+                <a href="javascript: void(0);">多看阅读</a>
+                <span>丨</span>
+                <a href="javascript: void(0);">云服务</a>
+                <span>丨</span>
+                <a href="javascript: void(0);">金融</a>
+                <span>丨</span>
+                <a href="javascript: void(0);">小米商城移动版</a>
+                <span>丨</span>
+                <a href="javascript: void(0);">问题反馈</a>
+                <span>丨</span>
+                <a href="javascript: void(0);">Select Region</a>
+            </div>
+            <div class="shopping-info">
+                <div class="shopping-car">
+                    <a href="javascript: void(0);" class="shop-car">购物车（<span class="num">0</span>）</a>
+                    <div class="down-list">
+                        <p class="car-info">购物车中还没有商品,赶紧选购吧！</p>
+                    </div>
+                </div>
+            </div>
+            <div class="login-info">
+                <a href="javascript: void(0);">登录</a>
+                <span>丨</span>
+                <a href="javascript: void(0);">注册</a>
+                <span>丨</span>
+                <a href="javascript: void(0);">消息通知</a>
+            </div>
+        </div>
+    </div>
+
+    <div class="header">
+        <div class="header-wrap clearfix">
+            <div class="logo">
+                <a href="javascript: void(0);"></a>
+            </div>
+
+            <div class="logo-img">
+                <a href="javascript: void(0);"></a>
+            </div>
+
+            <div class="main-nav">
+                <ul class="nav clearfix">
+                    <li class="nav-item first-item">
+                        <a class="nav-a" href="javascript: void(0);"></a>
+                        <div class="item-child">
+                            <ul class="child-nav">
+                                <li class="child-nav-item">
+                                    <a class="link" href="javascript: void(0);">手机 电话卡</a>
+                                    <div class="right-list right-list-1">
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+
+                                    </div>
+                                </li>
+                                <li class="child-nav-item">
+                                    <a class="link" href="javascript: void(0);">笔记本 平板</a>
+                                    <div class="right-list right-list-2">
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="child-nav-item">
+                                    <a class="link" href="javascript: void(0);">电视 盒子</a>
+                                    <div class="right-list right-list-3">
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="child-nav-item">
+                                    <a class="link" href="javascript: void(0);">路由器 智能硬件</a>
+                                    <div class="right-list right-list-4">
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="child-nav-item">
+                                    <a class="link" href="javascript: void(0);">移动电源 电池 插线板</a>
+                                    <div class="right-list right-list-5">
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="child-nav-item">
+                                    <a class="link" href="javascript: void(0);">耳机 音箱</a>
+                                    <div class="right-list right-list-6">
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="child-nav-item">
+                                    <a class="link" href="javascript: void(0);">保护套 贴膜</a>
+                                    <div class="right-list right-list-7">
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="child-nav-item">
+                                    <a class="link" href="javascript: void(0);">线材 支架 存储卡</a>
+                                    <div class="right-list right-list-8">
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="child-nav-item">
+                                    <a class="link" href="javascript: void(0);">箱包 服饰 鞋</a>
+                                    <div class="right-list right-list-9">
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                                <li class="child-nav-item">
+                                    <a class="link" href="javascript: void(0);">米兔 生活周边</a>
+                                    <div class="right-list right-list-10">
+                                        <ul>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                            <li>
+                                                <a class="phone-info clearfix" href="javascript: void(0);">
+                                                    <img src="img/5c_80.jpg" alt="we"/>
+                                                    <span>小米手机5c</span>
+                                                </a>
+                                                <a class="buy-btn" href="javascript: void(0);">选购</a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-a" href="javascript: void(0);">
+                            <span>小米手机</span>
+                        </a>
+                        <div class="li-child">
+                            <ul class="child-list clearfix">
+                                <li class="no-border">
+                                    <div class="phone-img">
+                                        <img src="img/mi5c_320x220.png" alt="we"/>
+                                    </div>
+                                        <a href="javascript: void(0);">小米手机5c</a>
+                                    <p>1499元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/xiaomiNOTE2-320-220!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米Note 2</a>
+                                    <p>2799元起</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/MIX-320-220!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米MIX</a>
+                                    <p>3499元起</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/xiaomi5S-320-220!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米5s</a>
+                                    <p>1999元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/5spluse320_220!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米手机5s Plus</a>
+                                    <p>2299元起</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/mi5!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米手机5</a>
+                                    <p>1799元</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-a" href="javascript: void(0);">红米</a>
+                        <div class="li-child">
+                            <ul class="child-list clearfix">
+                                <li class="no-border">
+                                    <div class="phone-img">
+                                        <img src="img/hmn4xtb!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">红米Note 4X</a>
+                                    <p>999元起</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/hongminote4!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">红米Note 4</a>
+                                    <p>999元起</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/hm4x320!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">红米4X</a>
+                                    <p>699元起</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/hm4a320.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米手机4A</a>
+                                    <p>599元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/320-2202!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">红米4</a>
+                                    <p>799元起</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-a" href="javascript: void(0);">平板·笔记本</a>
+                        <div class="li-child">
+                            <ul class="child-list clearfix">
+                                <li class="no-border">
+                                    <div class="phone-img">
+                                        <img src="img/mipad3_320.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米平板3 64GB</a>
+                                    <p>1499元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/bijiben32012.5!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米笔记本Air 12.5"</a>
+                                    <p>3599元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/bijiben320!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米笔记本Air 13.3"</a>
+                                    <p>4999元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/bijiben320!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米笔记本Air 13.3"尊享版</a>
+                                    <p>5999元</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-a" href="javascript: void(0);">电视</a>
+                        <div class="li-child">
+                            <ul class="child-list clearfix">
+                                <li class="no-border">
+                                    <div class="phone-img">
+                                        <img src="img/320_43.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米电视4A 43英寸</a>
+                                    <p>2099元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/320_49.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米电视4A 49英寸</a>
+                                    <p>2599元起</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/320_55.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米电视4A 55英寸</a>
+                                    <p>3199元起</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/320_65.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米电视4A 55英寸</a>
+                                    <p>5699元起</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/101860xin.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米电视3s 60英寸</a>
+                                    <p>4799元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/70dianshi.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">查看全部</a>
+                                    <p>
+                                        <a href="javascript: void(0);">小米电视</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-a" href="javascript: void(0);">盒子·影音</a>
+                        <div class="li-child">
+                            <ul class="child-list clearfix">
+                                <li class="no-border">
+                                    <div class="phone-img">
+                                        <img src="img/mihezi.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米盒子3s</a>
+                                    <p>299元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/mihezi.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米盒子3c</a>
+                                    <p>199元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/hezi3s!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米盒子3增强版</a>
+                                    <p>399元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/hezimini.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米盒子mini版</a>
+                                    <p>179元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/320x220.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米家庭影院</a>
+                                    <p>1999元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/putonban!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米家庭音响 标准版</a>
+                                    <p>699元</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-a" href="javascript: void(0);">路由器</a>
+                        <div class="li-child">
+                            <ul class="child-list clearfix">
+                                <li class="no-border">
+                                    <div class="phone-img">
+                                        <img src="img/lyqhd.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米路由器 HD</a>
+                                    <p>1299元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/lyqhd.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米路由器 Pro</a>
+                                    <p>499元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/lyq31.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米路由器 3</a>
+                                    <p>149元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/lyq31.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米路由器 3C</a>
+                                    <p>99元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/dlm01.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米WiFi电力猫</a>
+                                    <p>249元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/fdq2!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米WiFi放大器 2</a>
+                                    <p>49元</p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-a" href="javascript: void(0);">智能硬件</a>
+                        <div class="li-child">
+                            <ul class="child-list clearfix">
+                                <li class="no-border">
+                                    <div class="phone-img">
+                                        <img src="img/tzc320!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米体脂秤</a>
+                                    <p>199元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/jjy320!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">米家行车记录仪</a>
+                                    <p>349元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/wrj4k320.png" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米无人机 4k 版</a>
+                                    <p>2999元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/djj320!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">小米米家对讲机</a>
+                                    <p>249元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/dfb!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">米家IH电饭煲</a>
+                                    <p>399元</p>
+                                </li>
+                                <li>
+                                    <div class="phone-img">
+                                        <img src="img/air2!160x110.jpg" alt="we"/>
+                                    </div>
+                                    <a href="javascript: void(0);">查看全部</a>
+                                    <p>
+                                        <a href="javascript: void(0);">智能硬件</a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-a" href="javascript: void(0);">服务</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-a" href="javascript: void(0);">社区</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="site-search">
+                <form class="nav-form" action="" enctype="multipart/form-data" method="get" >
+                    <input type="search" class="search-text"/>
+                    <input type="submit" class="search-btn" value=""/>
+                    <div class="hot-words">
+                        <a href="javascript: void(0);">红米4X</a>
+                        <a href="javascript: void(0);">米粉节不只是5折</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="container-wrap">
+            <div class="banner">
+                <div>
+                    <a class="banner-img" href="javascript: void(0);">
+                        <img src="img/xmad_14913864807911_GYxMJ.jpg" alt="we"/>
+                    </a>
+                </div>
+                <div class="banner-pager">
+                    <ul class="pager-list">
+                        <li>
+                            <a href="javascript: void(0);"></a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);"></a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);"></a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);"></a>
+                        </li>
+                        <li>
+                            <a href="javascript: void(0);"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="banner-bottom clearfix">
+                <div class="banner-bottom-left">
+                    <ul class="left-list clearfix">
+                        <li class="children-item top no-bl">
+                            <a href="">
+                                <span class="children-item-icon"></span>
+                                选购手机
+                            </a>
+                        </li>
+                        <li class="children-item top">
+                            <a href="">
+                                <span class="children-item-icon"></span>
+                                选购手机
+                            </a>
+                        </li>
+                        <li class="children-item top">
+                            <a href="">
+                                <span class="children-item-icon"></span>
+                                选购手机
+                            </a>
+                        </li>
+                        <li class="children-item no-bl">
+                            <a href="">
+                                <span class="children-item-icon"></span>
+                                选购手机
+                            </a>
+                        </li>
+                        <li class="children-item">
+                            <a href="">
+                                <span class="children-item-icon"></span>
+                                选购手机
+                            </a>
+                        </li>
+                        <li class="children-item">
+                            <a href="">
+                                <span class="children-item-icon"></span>
+                                选购手机
+                            </a>
+                        </li>
+
+                    </ul>
+                </div>
+                <ul class="bottom-right-list clearfix">
+                    <li>
+                        <a href="">
+                            <img src="img/xmad_1487844180216_JVvCK.jpg" alt="we"/>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="img/xmad_14915545423474_KhmUa.jpg" alt="we"/>
+                        </a>
+                    </li>
+                    <li class="no-mr">
+                        <a href="">
+                            <img src="img/xmad_14913862927786_hCqKg.jpg" alt="we"/>
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <div class="single-star">
+                <h2 class="title">小米明星产品</h2>
+                <div class="page-turn">
+                    <a class="turn-btn no-br" href="javascript: void(0);">&lt;</a>
+                    <a class="turn-btn" href="javascript: void(0);">&gt;</a>
+                </div>
+                <ul class="star-list clearfix">
+                    <li>
+                        <a class="product-img" href="javascript: void(0);">
+                            <img src="img/star-list1.png" alt="we"/>
+                        </a>
+                        <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                        <p class="brief">更轻更薄 , 像杂志一样随身携带</p>
+                        <p class="price">3599元起</p>
+                    </li>
+                    <li>
+                        <a class="product-img" href="javascript: void(0);">
+                            <img src="img/6ef55907-bbed-49be-a2bb-be0821b5f7b8.png" alt="we"/>
+                        </a>
+                        <a class="product-name" href="javascript: void(0);">小米手环 2</a>
+                        <p class="brief">OLED 显示屏幕，升级计步算法</p>
+                        <p class="price">149元</p>
+                    </li>
+                    <li>
+                        <a class="product-img" href="javascript: void(0);">
+                            <img src="img/xmad_14915567725503_sFgGV.png" alt="we"/>
+                        </a>
+                        <a class="product-name" href="javascript: void(0);">米兔儿童手表Q</a>
+                        <p class="brief">11重安全设计，五重精准定位</p>
+                        <p class="price">299元</p>
+                    </li>
+                    <li>
+                        <a class="product-img" href="javascript: void(0);">
+                            <img src="img/74dd9736-f254-4964-a06a-24f0befb21ac.png" alt="we"/>
+                        </a>
+                        <a class="product-name" href="javascript: void(0);">小米电视3s 48英寸</a>
+                        <p class="brief">原装液晶屏，金属机身</p>
+                        <p class="price">2599元</p>
+                    </li>
+                    <li class="no-mr">
+                        <a class="product-img" href="javascript: void(0);">
+                            <img src="img/xmad_14917453512947_AmXkT.png" alt="we"/>
+                        </a>
+                        <a class="product-name" href="javascript: void(0);">10000mAh小米移动电源2</a>
+                        <p class="brief">双向快充，高密度锂聚合物电芯</p>
+                        <p class="price">79元</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-content">
+        <div class="main-content-wrap">
+            <div class="intelligent-hardware">
+                <h2 class="title">智能硬件</h2>
+                <div class="see-all">
+                    <a href="javascript: void(0);">查看更多</a>
+                    <a href="javascript: void(0);">&gt;</a>
+                </div>
+                <div class="hardware-content clearfix">
+                    <img class="left-img transform" src="img/xmad_14915564922658_guHfV.jpg" alt="we"/>
+                    <ul class="star-list clearfix">
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/pms_1478678718.61531371!220x220.jpg" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">米家IH电饭煲 3L</a>
+                            <p class="brief">IH 电磁环绕加热，3000+ 煮米方案</p>
+                            <p class="price">
+                                399元
+                            </p>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="brief">更轻更薄 , 像杂志一样随身携带</p>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="brief">更轻更薄 , 像杂志一样随身携带</p>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                        </li>
+                        <li class="no-mr transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="brief">更轻更薄 , 像杂志一样随身携带</p>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                        </li>
+                    </ul>
+
+                    <ul class="star-list clearfix">
+                        <li class="transform">
+                            <div class="new">
+                                <span class="sale">新品</span>
+                            </div>
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="brief">更轻更薄 , 像杂志一样随身携带</p>
+                            <p class="price">
+                                3599元起
+                            </p>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="brief">更轻更薄 , 像杂志一样随身携带</p>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="brief">更轻更薄 , 像杂志一样随身携带</p>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                        </li>
+                        <li class="no-mr transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="brief">更轻更薄 , 像杂志一样随身携带</p>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="match-hardware">
+                <h2 class="title">搭配</h2>
+                <div class="see-all section-nav">
+                    <ul class="section-nav-bar clearfix">
+                        <li class="nav-bar-item">热门</li>
+                        <li class="nav-bar-item">耳机音箱</li>
+                        <li class="nav-bar-item">电源</li>
+                        <li class="nav-bar-item no-mr">电池存储卡</li>
+                    </ul>
+                </div>
+                <div class="hardware-content clearfix">
+                    <img class="left-img short-img transform" src="img/xmad_14915583754575_IeKzQ.jpg" alt="we"/>
+                    <ul class="star-list clearfix">
+                        <li class="transform">
+                            <div class="discount">
+                                <span class="sale">享9.5折</span>
+                            </div>
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="no-mr transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <img class="left-img short-img transform" src="img/xmad_14915583754575_IeKzQ.jpg" alt="we"/>
+
+                    <ul class="star-list clearfix">
+                        <li class="transform">
+                            <div class="new">
+                                <span class="sale">新品</span>
+                            </div>
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="brief">更轻更薄 , 像杂志一样随身携带</p>
+                            <p class="price">3599元起</p>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="no-mr transform bisect">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/T142A_BXEv1RXrhCrK.jpg" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米车载充电器</a>
+                            <p class="price">39元</p>
+                        </li>
+                        <li class="no-mr transform bisect">
+                            <a class="more-turn" href="javascript: void(0);">
+                                <img src="img/content4-pic2.png" alt="we"/>
+                            </a>
+                            <a class="see-more" href="javascript: void(0);">
+                                浏览更多
+                                <small>热门</small>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="parts match-hardware">
+                <h2 class="title">配件</h2>
+                <div class="see-all section-nav">
+                    <ul class="section-nav-bar clearfix">
+                        <li class="nav-bar-item">热门</li>
+                        <li class="nav-bar-item">保护套</li>
+                        <li class="nav-bar-item">贴膜</li>
+                        <li class="nav-bar-item no-mr">其他配件</li>
+                    </ul>
+                </div>
+                <div class="hardware-content clearfix">
+                    <img class="left-img short-img transform" src="img/xmad_14915583754575_IeKzQ.jpg" alt="we"/>
+                    <ul class="star-list clearfix">
+                        <li class="transform">
+                            <div class="discount">
+                                <span class="sale">享9.5折</span>
+                            </div>
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="transform">
+                            <div class="discount">
+                                <span class="sale">享9.5折</span>
+                            </div>
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="no-mr transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <img class="left-img short-img transform" src="img/xmad_14915583754575_IeKzQ.jpg" alt="we"/>
+
+                    <ul class="star-list clearfix">
+                        <li class="transform">
+                            <div class="new">
+                                <span class="sale">新品</span>
+                            </div>
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="brief">更轻更薄 , 像杂志一样随身携带</p>
+                            <p class="price">3599元起</p>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="no-mr transform bisect">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/T142A_BXEv1RXrhCrK.jpg" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米车载充电器</a>
+                            <p class="price">39元</p>
+                        </li>
+                        <li class="no-mr transform bisect">
+                            <a class="more-turn" href="javascript: void(0);">
+                                <img src="img/content4-pic2.png" alt="we"/>
+                            </a>
+                            <a class="see-more" href="javascript: void(0);">
+                                浏览更多
+                                <small>热门</small>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="ambitus match-hardware">
+                <h2 class="title">周边</h2>
+                <div class="see-all section-nav">
+                    <ul class="section-nav-bar clearfix">
+                        <li class="nav-bar-item">热门</li>
+                        <li class="nav-bar-item">服装</li>
+                        <li class="nav-bar-item">米兔</li>
+                        <li class="nav-bar-item">生活周边</li>
+                        <li class="nav-bar-item no-mr">箱包</li>
+                    </ul>
+                </div>
+                <div class="hardware-content clearfix">
+                    <img class="left-img short-img transform" src="img/xmad_14915583754575_IeKzQ.jpg" alt="we"/>
+                    <ul class="star-list clearfix">
+                        <li class="transform">
+                            <div class="discount">
+                                <span class="sale">享9.5折</span>
+                            </div>
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="no-mr transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                    </ul>
+
+                    <img class="left-img short-img transform" src="img/xmad_14915583754575_IeKzQ.jpg" alt="we"/>
+
+                    <ul class="star-list clearfix">
+                        <li class="transform">
+                            <div class="new">
+                                <span class="sale">新品</span>
+                            </div>
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人评价
+                            </p>
+                            <div class="hidden-block">
+                                <span class="discuss">超级无敌，太好了</span>
+                                <p class="discussant">来自sb的评价</p>
+                            </div>
+                        </li>
+                        <li class="no-mr transform bisect">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/T142A_BXEv1RXrhCrK.jpg" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米车载充电器</a>
+                            <p class="price">39元</p>
+                        </li>
+                        <li class="no-mr transform bisect">
+                            <a class="more-turn" href="javascript: void(0);">
+                                <img src="img/content4-pic2.png" alt="we"/>
+                            </a>
+                            <a class="see-more" href="javascript: void(0);">
+                                浏览更多
+                                <small>热门</small>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="recommend">
+                <h2 class="title">为您推荐</h2>
+                <div class="page-turn">
+                    <a class="turn-btn no-br" href="javascript: void(0);">&lt;</a>
+                    <a class="turn-btn" href="javascript: void(0);">&gt;</a>
+                </div>
+                <div class="hardware-content clearfix">
+
+                    <ul class="star-list clearfix">
+                        <li class="transform">
+                            <div class="discount">
+                                <span class="sale">享9.5折</span>
+                            </div>
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人好评
+                            </p>
+                        </li>
+                        <li class="transform">
+                            <div class="discount">
+                                <span class="sale">享9.5折</span>
+                            </div>
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                                <span class="del">3999元</span>
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人好评
+                            </p>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人好评
+                            </p>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人好评
+                            </p>
+                        </li>
+                        <li class="no-mr transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/star-list1.png" alt="we"/>
+                            </a>
+                            <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                            <p class="price">
+                                3599元起
+                            </p>
+                            <p class="discussant">
+                                <span>2.3万</span>人好评
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="popular-products">
+                <h2 class="title">热评产品</h2>
+                <div class="hardware-content clearfix">
+
+                    <ul class="star-list clearfix">
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/bae79ac6-60d5-478d-90e7-ff1222764bd1.jpg" alt="we"/>
+                            </a>
+                            <p class="discuss">
+                                <a class="product-name" href="javascript: void(0);">超级喜欢！小巧玲珑！音质完美！不知道为什么！只要是小米出的东西我都喜欢！那倒是因为那一句？？小米为发...</a>
+                            </p>
+                            <p class="discussant">
+                                来自于
+                                <span>田密</span>
+                                的评价
+                            </p>
+                            <p class="price">
+                                <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                                <span class="line">丨</span>
+                                399元
+                            </p>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/bae79ac6-60d5-478d-90e7-ff1222764bd1.jpg" alt="we"/>
+                            </a>
+                            <p class="discuss">
+                                <a class="product-name" href="javascript: void(0);">超级喜欢！小巧玲珑！音质完美！不知道为什么！只要是小米出的东西我都喜欢！那倒是因为那一句？？小米为发...</a>
+                            </p>
+                            <p class="discussant">
+                                来自于
+                                <span>田密</span>
+                                的评价
+                            </p>
+                            <p class="price">
+                                <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                                <span class="line">丨</span>
+                                399元
+                            </p>
+                        </li>
+                        <li class="transform">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/bae79ac6-60d5-478d-90e7-ff1222764bd1.jpg" alt="we"/>
+                            </a>
+                            <p class="discuss">
+                                <a class="product-name" href="javascript: void(0);">超级喜欢！小巧玲珑！音质完美！不知道为什么！只要是小米出的东西我都喜欢！那倒是因为那一句？？小米为发...</a>
+                            </p>
+                            <p class="discussant">
+                                来自于
+                                <span>田密</span>
+                                的评价
+                            </p>
+                            <p class="price">
+                                <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                                <span class="line">丨</span>
+                                399元
+                            </p>
+                        </li>
+                        <li class="transform no-mr">
+                            <a class="product-img" href="javascript: void(0);">
+                                <img src="img/bae79ac6-60d5-478d-90e7-ff1222764bd1.jpg" alt="we"/>
+                            </a>
+                            <p class="discuss">
+                                <a class="product-name" href="javascript: void(0);">超级喜欢！小巧玲珑！音质完美！不知道为什么！只要是小米出的东西我都喜欢！那倒是因为那一句？？小米为发...</a>
+                            </p>
+                            <p class="discussant">
+                                来自于
+                                <span>田密</span>
+                                的评价
+                            </p>
+                            <p class="price">
+                                <a class="product-name" href="javascript: void(0);">小米air笔记本</a>
+                                <span class="line">丨</span>
+                                399元
+                            </p>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="substance popular-products">
+                <h2 class="title">内容</h2>
+                <div class="hardware-content clearfix">
+
+                    <ul class="star-list clearfix">
+                        <li class="transform substance-item">
+                            <h3 class="substance-title">图书</h3>
+                            <h4 class="little-title">
+                                <a class="name" href="javascript: void(0);">哈利·波特与被诅咒的孩子</a>
+                            </h4>
+                            <p class="brief">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</p>
+                            <p class="price">29.37元</p>
+                            <a class="product-img substance-img" href="javascript: void(0);">
+                                <img src="img/5e5da924-84e3-4959-9e25-5891cdf30757.jpg" alt="we"/>
+                            </a>
+                            <span class="turn-btn2 btn2-left">&lt;</span>
+                            <span class="turn-btn2 btn2-right">&gt;</span>
+                            <div class="substance-pager">
+                                <span class="s-pager"></span>
+                                <span class="s-pager"></span>
+                                <span class="s-pager"></span>
+                            </div>
+                        </li>
+                        <li class="transform substance-item">
+                            <h3 class="substance-title">图书</h3>
+                            <h4 class="little-title">
+                                <a class="name" href="javascript: void(0);">哈利·波特与被诅咒的孩子</a>
+                            </h4>
+                            <p class="brief">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</p>
+                            <p class="price">29.37元</p>
+                            <a class="product-img substance-img" href="javascript: void(0);">
+                                <img src="img/5e5da924-84e3-4959-9e25-5891cdf30757.jpg" alt="we"/>
+                            </a>
+                            <span class="turn-btn2 btn2-left">&lt;</span>
+                            <span class="turn-btn2 btn2-right">&gt;</span>
+                            <div class="substance-pager">
+                                <span class="s-pager"></span>
+                                <span class="s-pager"></span>
+                                <span class="s-pager"></span>
+                                <span class="s-pager"></span>
+                            </div>
+                        </li>
+                        <li class="transform substance-item">
+                            <h3 class="substance-title">图书</h3>
+                            <h4 class="little-title">
+                                <a class="name" href="javascript: void(0);">哈利·波特与被诅咒的孩子</a>
+                            </h4>
+                            <p class="brief">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</p>
+                            <p class="price">29.37元</p>
+                            <a class="product-img substance-img" href="javascript: void(0);">
+                                <img src="img/5e5da924-84e3-4959-9e25-5891cdf30757.jpg" alt="we"/>
+                            </a>
+                            <span class="turn-btn2 btn2-left">&lt;</span>
+                            <span class="turn-btn2 btn2-right">&gt;</span>
+                            <div class="substance-pager">
+                                <span class="s-pager"></span>
+                                <span class="s-pager"></span>
+                                <span class="s-pager"></span>
+                                <span class="s-pager"></span>
+                            </div>
+                        </li>
+                        <li class="transform no-mr substance-item">
+                            <h3 class="substance-title">图书</h3>
+                            <h4 class="little-title">
+                                <a class="name" href="javascript: void(0);">哈利·波特与被诅咒的孩子</a>
+                            </h4>
+                            <p class="brief">“哈利·波特”第八个故事中文版震撼来袭！特别彩排版剧本！</p>
+                            <p class="price">29.37元</p>
+                            <a class="product-img substance-img" href="javascript: void(0);">
+                                <img src="img/5e5da924-84e3-4959-9e25-5891cdf30757.jpg" alt="we"/>
+                            </a>
+                            <span class="turn-btn2 btn2-left">&lt;</span>
+                            <span class="turn-btn2 btn2-right">&gt;</span>
+                            <div class="substance-pager">
+                                <span class="s-pager"></span>
+                                <span class="s-pager"></span>
+                                <span class="s-pager"></span>
+                                <span class="s-pager"></span>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="video popular-products ">
+                <h2 class="title">视频</h2>
+                <div class="see-all">
+                    <a href="javascript: void(0);">查看更多</a>
+                    <a href="javascript: void(0);">&gt;</a>
+                </div>
+                <div class="hardware-content clearfix">
+
+                    <ul class="star-list clearfix">
+                        <li class="transform">
+                            <a class="product-img video-img" href="javascript: void(0);">
+                                <img src="img/xmad_14918846745236_hlYCc.jpg" alt="we"/>
+                                <span class="player">
+                                    <span class="play-btn"></span>
+                                </span>
+                            </a>
+                            <p class="discuss video">
+                                <a class="product-name video-info" href="javascript: void(0);">小寻儿童电话手表陪伴孩子的一天</a>
+                            </p>
+                            <p class="discussant">孩子的守护小精灵</p>
+                        </li>
+
+                        <li class="transform">
+                            <a class="product-img video-img" href="javascript: void(0);">
+                                <img src="img/xmad_14918846745236_hlYCc.jpg" alt="we"/>
+                                <span class="player">
+                                    <span class="play-btn"></span>
+                                </span>
+                            </a>
+                            <p class="discuss video">
+                                <a class="product-name video-info" href="javascript: void(0);">小寻儿童电话手表陪伴孩子的一天</a>
+                            </p>
+                            <p class="discussant">孩子的守护小精灵</p>
+                        </li>
+
+                        <li class="transform">
+                            <a class="product-img video-img" href="javascript: void(0);">
+                                <img src="img/xmad_14918846745236_hlYCc.jpg" alt="we"/>
+                                <span class="player">
+                                    <span class="play-btn"></span>
+                                </span>
+                            </a>
+                            <p class="discuss video">
+                                <a class="product-name video-info" href="javascript: void(0);">小寻儿童电话手表陪伴孩子的一天</a>
+                            </p>
+                            <p class="discussant">孩子的守护小精灵</p>
+                        </li>
+
+                        <li class="transform no-mr">
+                            <a class="product-img video-img" href="javascript: void(0);">
+                                <img src="img/xmad_14918846745236_hlYCc.jpg" alt="we"/>
+                                <span class="player">
+                                    <span class="play-btn"></span>
+                                </span>
+                            </a>
+                            <p class="discuss video">
+                                <a class="product-name video-info" href="javascript: void(0);">小寻儿童电话手表陪伴孩子的一天</a>
+                            </p>
+                            <p class="discussant">孩子的守护小精灵</p>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer">
+        <div class="footer-wrap">
+            <div class="footer-service">
+                <ul class="service-list clearfix">
+                    <li class="service-item">
+                        <a href="javascript:void(0);">
+                            <span class="footer-icon-1"></span>
+                            预约维修服务</a>
+                    </li>
+                    <li class="service-item">
+                        <a href="javascript:void(0);">
+                            <span class="footer-icon-2"></span>
+                            7天无理由退货</a>
+                    </li>
+                    <li class="service-item">
+                        <a href="javascript:void(0);">
+                            <span class="footer-icon-3"></span>
+                            15天免费换货</a>
+                    </li>
+                    <li class="service-item">
+                        <a href="javascript:void(0);">
+                            <span class="footer-icon-4"></span>
+                            满150元包邮</a>
+                    </li>
+                    <li class="service-item no-br">
+                        <a href="javascript:void(0);">
+                            <span class="footer-icon-5"></span>
+                            520余家售后网点</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="footer-links clearfix">
+                <dl class="col-links">
+                    <dt>帮助中心</dt>
+                    <dd>
+                        <a href="javascript:void(0);">账户管理</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:void(0);">购物指南</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:void(0);">订单操作</a>
+                    </dd>
+                </dl>
+                <dl class="col-links">
+                    <dt>服务支持</dt>
+                    <dd>
+                        <a href="javascript:void(0);">售后政策</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:void(0);">自助服务</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:void(0);">相关下载</a>
+                    </dd>
+                </dl>
+                <dl class="col-links">
+                    <dt>线下门店</dt>
+                    <dd>
+                        <a href="javascript:void(0);">小米之家</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:void(0);">服务网点</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:void(0);">零售网点</a>
+                    </dd>
+                </dl>
+                <dl class="col-links">
+                    <dt>关于小米</dt>
+                    <dd>
+                        <a href="javascript:void(0);">了解小米</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:void(0);">加入小米</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:void(0);">联系我们</a>
+                    </dd>
+                </dl>
+                <dl class="col-links">
+                    <dt>关注我们</dt>
+                    <dd>
+                        <a href="javascript:void(0);">新浪微博</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:void(0);">小米部落</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:void(0);">官方微信</a>
+                    </dd>
+                </dl>
+                <dl class="col-links">
+                    <dt>特色服务</dt>
+                    <dd>
+                        <a href="javascript:void(0);">F码通道</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:void(0);">礼物码</a>
+                    </dd>
+                    <dd>
+                        <a href="javascript:void(0);">防伪查询</a>
+                    </dd>
+                </dl>
+
+                <div class="col-contact">
+                    <p class="phone-num">400-100-5678</p>
+                    <p class="work-time">周一至周日 8:00-18:00</p>
+                    <span class="remark">（仅收市话费）</span>
+                    <p class="online-service">
+                        <a href="javascript:void(0);">
+                            <span class="msg-icon"></span>
+                            24小时在线客服
+                        </a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="bottom-bar">
+        <div class="bottom-bar-wrap">
+            <div class="bottom-main-content clearfix">
+                <div class="bottom-logo">
+                    <img src="img/logo-footer.png" alt="we"/>
+                </div>
+                <div class="bottom-main-info">
+                    <div class="link">
+                        <a href="javascript:void(0);">小米商城</a>
+                        <span>|</span>
+                        <a href="javascript:void(0);">MIUI</a>
+                        <span>|</span>
+                        <a href="javascript:void(0);">多看书城</a>
+                        <span>|</span>
+                        <a href="javascript:void(0);">小米路由器</a>
+                        <span>|</span>
+                        <a href="javascript:void(0);">视频电话</a>
+                        <span>|</span>
+                        <a href="javascript:void(0);">小米天猫店</a>
+                        <span>|</span>
+                        <a href="javascript:void(0);">小米淘宝直营店</a>
+                        <span>|</span>
+                        <a href="javascript:void(0);">小米网盟</a>
+                        <span>|</span>
+                        <a href="javascript:void(0);">小米移动</a>
+                        <span>|</span>
+                        <a href="javascript:void(0);">隐私政策</a>
+                        <span>|</span>
+                        <a href="javascript:void(0);">Select Region</a>
+                    </div>
+                    <div class="register">
+                        <p class="register-info">
+                            &copy;<a href="javascript:void(0);">mi.com</a>
+                            京ICP证110507号
+                            <a href="javascript:void(0);">京ICP备10046444号</a>
+                            <a href="javascript:void(0);">京公网安备11010802020134号</a>
+                            <a href="javascript:void(0);">京网文[2014]0059-0009号</a>
+                            <br/>
+                            违法和不良信息举报电话：185-0130-1238，本网站所列数据，除特殊说明，所有数据均出自我司实验室测试
+                        </p>
+                    </div>
+                </div>
+                <div class="link-img">
+                    <a href="javascript:void(0);">
+                        <img src="img/truste.png" alt="we"/>
+                    </a>
+                    <a href="javascript:void(0);">
+                        <img src="img/v-logo-2.png" alt="we"/>
+                    </a>
+                    <a href="javascript:void(0);">
+                        <img src="img/v-logo-1.png" alt="we"/>
+                    </a>
+                    <a href="javascript:void(0);">
+                        <img src="img/v-logo-3.png" alt="we"/>
+                    </a>
+                </div>
+            </div>
+            <div class="slogan">
+                <img src="img/slogan2016.png" alt="we"/>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
